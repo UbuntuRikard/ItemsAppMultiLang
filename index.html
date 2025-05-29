@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html id="htmlTag" lang="en" data-i18n="lang">
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="Heading">Shopping List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="shopstyle.css">
+	<link rel="stylesheet" href="modal.css" />
+</head>
+<body>
+    <div class="header-container">
+        <button class="info-btn" onclick="window.location.href='about_' + currentLang + '.html'">❗</button>
+        <h1 data-i18n="Heading">Shopping List</h1>
+        <button class="help-btn" onclick="window.location.href='helpind_' + currentLang + '.html'">❓</button>
+    </div>
+
+    <select id="storeSelect" onchange="changeStore()">
+        <option value="" data-i18n="Select store">Select store</option>
+    </select>
+
+    <div class="input-group">
+        <div class="input-line">
+            <input id="itemNumber" type="number" class="input-number" placeholder="Qty" min="0" max="999" data-i18n-placeholder="Qty">
+            <input id="itemName" type="text" class="input-name" placeholder="Item name" data-i18n-placeholder="Item name">
+        </div>
+        <select id="itemCategory">
+            <option value="" data-i18n="Select category">Select category</option>
+        </select>
+        <button id="addBtn" onclick="handleItemAction()" data-i18n="Add item">Add Item</button>
+    </div>
+
+    <div class="filter-bar">
+        <select id="filterCategory" onchange="renderList()">
+            <option value="" data-i18n="All Categories">All categories</option>
+        </select>
+        <div class="right-buttons">
+            <button id="manageBtn" onclick="window.location.href='categories.html'" data-i18n="Manage">Manage</button>
+            <button id="toggleZeroBtn" onclick="toggleAndTranslate()" data-i18n="Hide 0">Hide 0</button>
+        </div>
+    </div>
+
+    <div id="total" data-i18n="Total">Total: 0.00 kr</div>
+    <ul id="list"></ul>
+
+    <script src="lang_shop.js" defer></script>
+    <script src="shopscript.js" defer></script>
+<script>
+
+    document.addEventListener("DOMContentLoaded", async function () {
+        try {
+            await loadTranslations();
+            loadStores();
+			renderCategoryOptions();
+			renderList();
+        } catch (e) {
+            console.error("Fejl i loadTranslations:", e);
+        }
+    });
+</script>
+</body>
+</html>

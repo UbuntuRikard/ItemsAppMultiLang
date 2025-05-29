@@ -1,0 +1,27 @@
+Indkøbslisten – Versionshistorik
+
+Version 1.0.0 - 10-maj-2025 Beskrivelse: Indkøbslisten er en WebView-app, der hjælper med at organisere indkøb. Den er designet til at give en effektiv og fleksibel struktur til indkøbslister, butikker og kategorier. Brugeren kan oprette lister, tilføje kategorier og sortere varerne for en optimal shoppingoplevelse.
+
+Version 1.0.9 - 30-maj-2025 Beskrivelse: Indkøbslisten er en WPA-app, der hjælper med at organisere indkøb. Den er designet til at give en effektiv og fleksibel struktur til indkøbslister, butikker og kategorier. Brugeren kan oprette lister, tilføje kategorier og sortere varerne for en optimal shoppingoplevelse.
+Særlige funktioner:
+
+    Butiks- og listeadministration – Opret og slet butikker/lister
+
+    Kategoristyring – Tilpas kategorier for bedre organisering
+
+    Eksport & Import – Mulighed for at tage backup og gendanne data
+
+    Brugervenligt interface – Simpel og intuitiv opsætning
+    Sprog: Engelsk, Dansk, Svensk, Norsk, Finsk, Tysk, Spansk og Fransk
+
+Licensinformation: Dette projekt er multi sprogs og lavet med engelsksproget programmering. Projektet er GNU GPL 3.0-licenseret, og andre udviklere opfordres til at bygge videre på det og oversætte det til andre sprog end de nævnte.
+
+Udviklingsmetode: Indkøbslisten er skabt med en ny tilgang til softwareudvikling, hvor AI-assistenter som Copilot og ChatGPT hjælper med implementeringen af kode. Design, struktur og funktionalitet er defineret af [Dit Navn], mens AI har hjulpet med at realisere koden. Denne metode gør det muligt for ikke-programmører at udvikle software ved at specificere krav og teste løsninger.
+
+Version 1.x.x - Fremtidige opdateringer
+
+    Mulige udvidelser baseret på brugerfeedback
+
+    Optimering af WPA-ydeevne
+
+    Oversættelser og udvidelser af funktionalitet

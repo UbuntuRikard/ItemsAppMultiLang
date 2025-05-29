@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Language Editor</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 10px;
+      max-width: 768px;
+      margin: auto;
+      background: #f7f7f7;
+      line-height: 1.45;
+    }
+    h1 {
+      text-align: center;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+    }
+    h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+    select {
+      padding: 6px 10px;
+      font-size: 1rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+    .table-container {
+      overflow-x: auto;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      font-size: 0.9rem;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 6px;
+      text-align: left;
+      vertical-align: middle;
+    }
+    th {
+      background: #eee;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 5px 6px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    .buttons {
+      margin-top: 15px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 7px 12px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Language Translation Tool</h1>
+  <p>To apply the new language, please <b>close the app completely and open it again.</b>
+  This is a one-time setup — you won’t need to do this again unless you change the language.
+  Thank you!</p>
+
+  <div class="header-row">
+    <h3 id="shop-heading">SHOP (shopping.html)</h3>
+    <select id="languageSelect" onchange="switchLanguage()">
+      <option value="">Loading languages...</option>
+    </select>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>English</th>
+          <th id="shop-lang">English</th>
+        </tr>
+      </thead>
+      <tbody id="shop-table"></tbody>
+    </table>
+  </div>
+
+  <h3 id="cat-heading">CAT (categories.html)</h3>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>English</th>
+          <th id="cat-lang">English</th>
+        </tr>
+      </thead>
+      <tbody id="cat-table"></tbody>
+    </table>
+  </div>
+
+  <!-- NY WARNING SEKTION -->
+  <h3 id="warning-heading">WARNING</h3>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>English</th>
+          <th id="warning-lang">English</th>
+        </tr>
+      </thead>
+      <tbody id="warning-table"></tbody>
+    </table>
+  </div>
+
+  <div class="buttons">
+    <button onclick="addLanguage()">Add Language</button>
+    <button onclick="saveJson()">Save JSON</button>
+    <input type="file" id="fileInput" accept=".json" onchange="loadJson()" />
+  </div>
+
+<script>
+const phrases = {
+  shop: [
+    "Heading", "Select store", "Qty", "Item name", "Select category", "Add item",
+    "All Categories", "Manage", "Update item", "Hide 0", "Only 0", "Show all",
+    "Delete", "Category:", "Price", "Total", "£"
+  ],
+  cat: [
+    "Heading", "Select store", "New store name", "Add Store", "Delete Store",
+    "Export", "Import", "Category name", "Add Category", "Update Category",
+    "Back", "Edit", "Delete", "Change Language"
+  ],
+  warning: [
+    "select_store", "qty_alert", "cat_name_alert", "store_empty_alert", "store_dub",
+    "store_delete", "store_select", "cat_empty", "cat_dub", "store_del_yes_no",
+    "export_mes", "import_mes", "alert_ok", "alert_yes", "alert_no", "data_saved",
+    "data_imported", "data_error", "browser_msg"
+  ]
+};
+
+const defaults = {
+  shop: { "Heading": "Shopping list" },
+  cat: { "Heading": "Administration" },
+  warning: {
+    "export_mes": "",
+    "import_mes": "",
+    "alert_ok": "",
+    "alert_yes": "",
+    "alert_no": ""
+  }
+};
+
+  let langData = {};
+  let currentLang = 'en';
+
+  function buildTables() {
+    ['shop', 'cat', 'warning'].forEach(section => {
+      const tbody = document.getElementById(section + '-table');
+      tbody.innerHTML = '';
+      phrases[section].forEach((phrase, i) => {
+        const tr = document.createElement('tr');
+
+        const tdEnglish = document.createElement('td');
+        tdEnglish.textContent = phrase;
+        tr.appendChild(tdEnglish);
+		const tdInput = document.createElement('td');
+		const input = section === 'warning'
+		  ? document.createElement('textarea')
+		  : document.createElement('input');
+
+		if (section !== 'warning') input.type = 'text';
+
+		input.dataset.section = section;
+		input.dataset.key = phrase;
+		input.id = `${section}-${i}`;
+		tdInput.appendChild(input);
+		tr.appendChild(tdInput);
+
+        tbody.appendChild(tr);
+      });
+    });
+  }
+
+  function fillInputs() {
+    ['shop', 'cat', 'warning'].forEach(section => {
+      phrases[section].forEach((phrase, i) => {
+        const input = document.getElementById(`${section}-${i}`);
+        if (!input) return;
+
+        const val = langData[currentLang]?.[section]?.[phrase] || '';
+        input.value = val;
+      });
+    });
+
+    document.getElementById('shop-heading').textContent = langData[currentLang]?.shop?.Heading || defaults.shop.Heading;
+    document.getElementById('cat-heading').textContent = langData[currentLang]?.cat?.Heading || defaults.cat.Heading;
+
+    document.getElementById('shop-lang').textContent = currentLang;
+    document.getElementById('cat-lang').textContent = currentLang;
+
+    if (document.getElementById('warning-lang')) {
+      document.getElementById('warning-lang').textContent = currentLang;
+    }
+  }
+
+  function populateLanguageSelect() {
+    const select = document.getElementById('languageSelect');
+    select.innerHTML = '';
+
+    if (!langData || Object.keys(langData).length === 0) {
+      const option = document.createElement('option');
+      option.textContent = 'No languages loaded';
+      option.value = '';
+      select.appendChild(option);
+      return;
+    }
+
+    Object.keys(langData).forEach(langCode => {
+      const option = document.createElement('option');
+      option.value = langCode;
+      option.textContent = langCode;
+      select.appendChild(option);
+    });
+
+    select.value = currentLang;
+  }
+
+  function switchLanguage() {
+    saveCurrentInputsToLangData();
+    const select = document.getElementById('languageSelect');
+    const selectedLang = select.value;
+    if (!selectedLang) return;
+    currentLang = selectedLang;
+    localStorage.setItem('selectedLang', currentLang);
+    fillInputs();
+  }
+
+  function saveCurrentInputsToLangData() {
+    if (!langData[currentLang]) langData[currentLang] = { shop: {}, cat: {}, warning: {} };
+
+    ['shop', 'cat', 'warning'].forEach(section => {
+      if (!langData[currentLang][section]) langData[currentLang][section] = {};
+      phrases[section].forEach((phrase, i) => {
+        const input = document.getElementById(`${section}-${i}`);
+        if (input) {
+          langData[currentLang][section][phrase] = input.value.trim();
+        }
+      });
+    });
+  }
+
+  function saveJson() {
+    saveCurrentInputsToLangData();
+
+    const blob = new Blob([JSON.stringify(langData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'lang.json';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function loadJson() {
+    const fileInput = document.getElementById('fileInput');
+    const file = fileInput.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = e => {
+      try {
+        const parsed = JSON.parse(e.target.result);
+        if (typeof parsed !== 'object') throw new Error("Invalid JSON format");
+        langData = parsed;
+
+        currentLang = localStorage.getItem('selectedLang') || Object.keys(langData)[0] || 'en';
+        localStorage.setItem('selectedLang', currentLang);
+
+        populateLanguageSelect();
+        buildTables();
+        fillInputs();
+
+        fileInput.value = '';
+      } catch (err) {
+        alert('Fejl i indlæsning af fil: ' + err.message);
+      }
+    };
+    reader.readAsText(file);
+  }
+
+  function addLanguage() {
+    saveCurrentInputsToLangData();
+    const newLang = prompt("Enter new language code (e.g., 'fr' for French):");
+    if (!newLang) return;
+    const langCode = newLang.trim().toLowerCase();
+    if (!langCode.match(/^[a-z]{2,10}$/)) {
+      alert("Invalid language code. Only letters, 2–10 characters.");
+      return;
+    }
+    if (langData[langCode]) {
+      alert("Language already exists.");
+      document.getElementById('languageSelect').value = langCode;
+      currentLang = langCode;
+      fillInputs();
+      return;
+    }
+    langData[langCode] = { shop: {}, cat: {}, warning: {} };
+
+    const select = document.getElementById('languageSelect');
+    const option = document.createElement('option');
+    option.value = langCode;
+    option.textContent = langCode;
+    select.appendChild(option);
+    select.value = langCode;
+
+    currentLang = langCode;
+    localStorage.setItem('selectedLang', currentLang);
+
+    fillInputs();
+  }
+
+  async function fetchLangJson() {
+    try {
+      const resp = await fetch('lang.json');
+      if (!resp.ok) throw new Error('Kunne ikke hente lang.json');
+      const json = await resp.json();
+      langData = json;
+
+      currentLang = localStorage.getItem('selectedLang') || Object.keys(langData)[0] || 'en';
+      localStorage.setItem('selectedLang', currentLang);
+
+      populateLanguageSelect();
+      buildTables();
+      fillInputs();
+    } catch (err) {
+      console.warn('lang.json ikke fundet eller fejl i fil:', err.message);
+
+      langData = { en: { shop: {}, cat: {}, warning: {} } };
+      currentLang = 'en';
+      localStorage.removeItem('selectedLang');
+      populateLanguageSelect();
+      buildTables();
+      fillInputs();
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    fetchLangJson();
+  });
+</script>
+</body>
+</html>

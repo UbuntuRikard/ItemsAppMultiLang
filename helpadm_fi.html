@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 1em; /* approximately the width of an 'm' */
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1, h2 {
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+    }
+
+    ul {
+      padding-left: 1.2em;
+      margin-top: 0;
+    }
+
+    li {
+      margin-bottom: 0.75em;
+    }
+
+    .back-button {
+      display: block;
+      margin: 2em auto 0 auto;
+      padding: 0.75em 1.5em;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .back-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hallinta</h1>
+  <p>
+    Täällä voit luoda ja poistaa kauppalistoja tai yleisiä listoja. Listat voivat edustaa muutakin kuin kauppaa.
+    Kun olet luonut kaupan, voit valita sen ja luoda kategorioita.
+    Kategoriat palvelevat useita tarkoituksia; ne voivat näyttää tuotteen tarkan sijainnin esimerkiksi rautakaupassa tai muussa kaupassa.
+    Voit myös käyttää niitä määrittämään ostojärjestystä lisäämällä numeron kategorianimen eteen — esimerkiksi "01 Vihannekset", jolloin kategoriat järjestetään ensin numeroiden mukaan ja sitten aakkosittain.
+    Tässä hallintapaneelissa voit myös nimetä kategoriat uudelleen.
+    Tässä versiossa et voi muokata kaupan tai listan nimiä.
+  </p>
+  <h2>Saatavilla olevat hallintaominaisuudet:</h2>
+  <ul>
+    <li><strong>Lisää kauppa</strong><br>Lisää kaupan tai pelkän listan tarpeen mukaan</li>
+    <li><strong>Poista kauppa</strong><br>Poistaa valitun kaupan, sen tuotteet ja kategoriat</li>
+    <li><strong>Vie</strong><br>Vie koko tietokannan, mukaan lukien määrät, tuotteet, hinnat, kategoriat ja kaupat</li>
+    <li><strong>Tuo</strong><br>Vastakohta viennille, koskee kaikkea dataa</li>
+  </ul>
+  <p><strong>Valitse kauppa</strong> (tehdään ylhäällä), sitten voit:</p>
+  <ul>
+    <li><strong>Lisää kategoria</strong><br>Kategoriat auttavat löytämään tuotteet tai niiden sijainnin</li>
+    <li><strong>Poista kategoria</strong><br>Poistaa kategorian ja siihen liittyvät tuotteet</li>
+    <li><strong>Muokkaa kategoriaa</strong><br>Uudelleennimeää kategorian</li>
+  </ul>
+  <button class="back-button" onclick="history.back()">Takaisin</button>
+</body>
+</html>

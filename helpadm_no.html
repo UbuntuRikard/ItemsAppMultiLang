@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 1em; /* approximately the width of an 'm' */
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1, h2 {
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+    }
+
+    ul {
+      padding-left: 1.2em;
+      margin-top: 0;
+    }
+
+    li {
+      margin-bottom: 0.75em;
+    }
+
+    .back-button {
+      display: block;
+      margin: 2em auto 0 auto;
+      padding: 0.75em 1.5em;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .back-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Administrasjon</h1>
+  <p>
+    Her kan du opprette og slette butikk- eller generelle lister. Lister kan representere mer enn bare en butikk.
+    Når du har opprettet en butikk, kan du velge den og deretter lage kategorier.
+    Kategorier har flere formål; de kan indikere nøyaktig plassering av en vare i for eksempel en jernvarehandel eller annen butikk med spesifikke plasseringer.
+    Du kan også bruke dem til å bestemme rekkefølgen på varer ved å legge til et tall foran kategorinavnet — for eksempel "01 Grønnsaker", der kategorien sorteres numerisk og deretter alfabetisk.
+    I dette administrasjonspanelet kan du også gi kategorier nye navn.
+    I denne versjonen kan du ikke redigere navn på butikker eller lister.
+  </p>
+  <h2>Tilgjengelige administrasjonsfunksjoner:</h2>
+  <ul>
+    <li><strong>Legg til butikk</strong><br>Legger til en butikk, eller bare en liste om ønskelig</li>
+    <li><strong>Slett butikk</strong><br>Sletter valgt butikk med tilhørende varer og kategorier</li>
+    <li><strong>Eksporter</strong><br>Eksporterer hele databasen inkludert mengder, varetekst, priser, kategorier og butikker</li>
+    <li><strong>Importer</strong><br>Omvendt av eksport, gjelder all data</li>
+  </ul>
+  <p><strong>Velg butikk</strong> (gjøres øverst), deretter kan du:</p>
+  <ul>
+    <li><strong>Legg til kategori</strong><br>Kategorier hjelper å finne varer eller vise plassering</li>
+    <li><strong>Slett kategori</strong><br>Sletter kategorien og tilhørende varer</li>
+    <li><strong>Rediger kategori</strong><br>Gir nytt navn til kategorien</li>
+  </ul>
+  <button class="back-button" onclick="history.back()">Tilbake</button>
+</body>
+</html>

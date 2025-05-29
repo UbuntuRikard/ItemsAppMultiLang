@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 1em;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #005f73;
+      margin-top: 1.5em;
+    }
+    p {
+      margin-bottom: 1em;
+    }
+    .section {
+      margin-bottom: 1.5em;
+    }
+
+    /* 20% REDUCERET AFSTAND FOR CATEGORIES */
+    .categories {
+      background: #eef;
+      padding: 8px; /* fra 10px → 20% mindre */
+      border-left: 4px solid #0077aa;
+      white-space: pre-line;
+      margin-top: 0.4em; /* fra 0.5em → 20% mindre */
+      line-height: 1.28; /* fra 1.6 → 20% mindre */
+      font-size: 0.95em; /* let kompakt */
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 1em; /* lidt mindre venstre margen */
+      margin-top: 0.4em; /* fra 0.5em → 20% mindre */
+      line-height: 1.28; /* mere kompakt listevisning */
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      margin-top: 3em;
+      padding: 15px;
+      font-size: 16px;
+      background-color: #0077aa;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005f73;
+    }
+  </style>
+</head>
+<body>
+  <h3>App de Compras</h3>
+
+  <div class="section">
+    <p>Con esta aplicación puedes crear listas de compras, recordatorios y listas de inventario.</p>
+
+    <p>Para una lista de compras:<br>
+    Crea una tienda y añade categorías desde el panel de administración (más información en "Administración").</p>
+
+    <p>Las categorías te ayudan a moverte eficientemente por la tienda sin retroceder.</p>
+
+    <p>Para comenzar, ve a “Administración”.</p>
+
+    <p>Para organizar tu ruta, pon un número delante del nombre de la categoría. La lista se ordena por ese número:</p>
+
+    <h4>Categorías:</h4>
+    <div class="categories">
+      01 Pan<br>
+      01 Verduras<br>
+      02 Carne fresca (no congelada)
+    </div>
+
+    <p>En una ferretería:</p>
+
+    <h4>Categorías:</h4>
+    <div class="categories">
+      01 Eléctricos<br>
+      02 Fontanería<br>
+      03 Herramientas
+    </div>
+
+    <p>También puedes registrar lo que tienes en casa, como en el congelador o la despensa.<br>
+    Crea una tienda llamada “Inventario Hogar”.</p>
+
+    <h4>Categorías:</h4>
+    <div class="categories">
+      Congelador<br>
+      Despensa<br>
+      Lavadero
+    </div>
+  </div>
+
+  <div class="section">
+    <p>Puedes editar un producto tocando el campo de cantidad. Esto lo moverá a la parte superior para edición. Modifica cantidad, nombre o categoría. Luego pulsa "Actualizar".</p>
+
+    <p>Al crear una lista, debes indicar cantidad, nombre y categoría. El precio no puede ingresarse aún.</p>
+
+    <p>Si la cantidad es 0, la lista funciona como recordatorio. Puedes ajustar la visibilidad:</p>
+
+    <ul>
+      <li>Mostrar todos los productos</li>
+      <li>Ocultar productos con cantidad 0</li>
+      <li>Mostrar solo productos con cantidad 0</li>
+    </ul>
+
+    <p>Al agregar una cantidad a un producto con 0, se mueve a la lista general.</p>
+
+    <p>El precio puede ingresarse y se ajusta automáticamente a ".00" si es un número entero.</p>
+
+    <p>Si el producto tiene precio y cantidad, tocar el nombre lo marca como comprado. Se mueve al final y actualiza el total. Se admiten precios negativos.</p>
+
+    <p>El seguimiento de precios es opcional pero útil para presupuestos. Bien usado, la app estima costos con precisión.</p>
+
+    <p>Si ves solo una categoría, solo se cuentan los productos de esa categoría en el total.</p>
+  </div>
+
+  <button onclick="history.back()">⬅️ Volver</button>
+</body>
+</html>

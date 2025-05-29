@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 1em;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #005f73;
+      margin-top: 1.5em;
+    }
+    p {
+      margin-bottom: 1em;
+    }
+    .section {
+      margin-bottom: 1.5em;
+    }
+
+    /* 20% REDUCERET AFSTAND FOR CATEGORIES */
+    .categories {
+      background: #eef;
+      padding: 8px; /* fra 10px → 20% mindre */
+      border-left: 4px solid #0077aa;
+      white-space: pre-line;
+      margin-top: 0.4em; /* fra 0.5em → 20% mindre */
+      line-height: 1.28; /* fra 1.6 → 20% mindre */
+      font-size: 0.95em; /* let kompakt */
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 1em; /* lidt mindre venstre margen */
+      margin-top: 0.4em; /* fra 0.5em → 20% mindre */
+      line-height: 1.28; /* mere kompakt listevisning */
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      margin-top: 3em;
+      padding: 15px;
+      font-size: 16px;
+      background-color: #0077aa;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005f73;
+    }
+  </style>
+</head>
+<body>
+  <h3>Shopping App</h3>
+
+  <div class="section">
+    <p>With this shopping app, you can create shopping lists, reminder lists, and inventory lists.</p>
+
+    <p>For a shopping list:<br>
+    Create a store and add categories, which you do in the administration panel (More about that in administration).</p>
+
+    <p>Categories help you navigate a store efficiently, ensuring you move through naturally without doubling back.</p>
+
+    <p>To start with lists, go to "Administration".</p>
+
+    <p>To organize your shopping route, place a number in front of your category name. The list sorts by category order, allowing you to structure your shopping sequence:</p>
+
+    <h4>Categories:</h4>
+    <div class="categories">
+      01 Bread<br>
+      01 Vegetables<br>
+      02 Fresh Meat (not frozen)
+    </div>
+
+    <p>Or if you're shopping at a hardware store:</p>
+
+    <h4>Categories:</h4>
+    <div class="categories">
+      01 Electrical Items<br>
+      02 Plumbing Supplies<br>
+      03 Tools
+    </div>
+
+    <p>You can also keep track of what you have at home in your freezer, pantry, or storage.<br>
+    Create a store named "Home Inventory"</p>
+
+    <h4>Categories:</h4>
+    <div class="categories">
+      Freezer<br>
+      Pantry<br>
+      Utility Room
+    </div>
+  </div>
+
+  <div class="section">
+    <p>You can edit an item by tapping the quantity field, which moves the item, quantity, and category to the top editing section. Modify quantity, item name, or select another category if available. When done, press the update button, which automatically switches function.</p>
+
+    <p>When creating a list, you must specify quantity, item name, and category before adding an entry. Price cannot be entered at this stage.</p>
+
+    <p>If quantity is set to 0, the list works as a reminder list for items to purchase. You can adjust visibility settings:</p>
+
+    <ul>
+      <li>Show all items</li>
+      <li>Hide items with quantity 0</li>
+      <li>Show only items with quantity 0</li>
+    </ul>
+
+    <p>Entering a quantity for an item in the "0" list moves it to the general list.</p>
+
+    <p>You can input a price; if you enter a whole number without decimals, it auto-formats to include ".00".</p>
+
+    <p>When an item has a price and quantity, tapping the item name marks it as purchased, moving it to the bottom of the list. The total cost updates as you shop. Negative prices, like bottle deposits, are also supported.</p>
+
+    <p>Price tracking is optional but useful for budgeting. If applied correctly, the app provides an accurate estimate of costs.</p>
+
+    <p>If viewing a specific category, only items within that category are counted toward the total.</p>
+  </div>
+
+  <button onclick="history.back()">⬅️ Back</button>
+</body>
+</html>

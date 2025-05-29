@@ -1,0 +1,140 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 10px;
+  background: #f7f7f7;
+  width: 100vw;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.header-container h1 {
+  flex: 1;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.info-btn, .help-btn {
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+input, select, button {
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.flex-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.flex-row button {
+  flex: 1 1 30%;
+  padding: 6px;
+}
+
+.link-button button {
+  background-color: #008CBA;
+}
+
+.link-button button:hover {
+  background-color: #0079a1;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background: #fff;
+  margin: 5px 0;
+  padding: 6px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  transform: scaleY(0.9);
+  min-height: 40px;
+}
+
+li span {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+li span:active {
+  background-color: #eee;
+}
+
+.btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.del-btn {
+  font-size: 0.65rem;
+  padding: 4px 8px;
+  height: 28px;
+  min-width: 60px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.highlight {
+  animation: flashHighlight 2s ease-in-out;
+}
+
+@keyframes flashHighlight {
+  0% { background-color: #ffffcc; }
+  50% { background-color: #fff176; }
+  100% { background-color: #ffffff; }
+}

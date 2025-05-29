@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 1em;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #005f73;
+      margin-top: 1.5em;
+    }
+    p {
+      margin-bottom: 1em;
+    }
+    .section {
+      margin-bottom: 1.5em;
+    }
+
+    /* 20% REDUCERET AFSTAND FOR CATEGORIES */
+    .categories {
+      background: #eef;
+      padding: 8px; /* fra 10px → 20% mindre */
+      border-left: 4px solid #0077aa;
+      white-space: pre-line;
+      margin-top: 0.4em; /* fra 0.5em → 20% mindre */
+      line-height: 1.28; /* fra 1.6 → 20% mindre */
+      font-size: 0.95em; /* let kompakt */
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 1em; /* lidt mindre venstre margen */
+      margin-top: 0.4em; /* fra 0.5em → 20% mindre */
+      line-height: 1.28; /* mere kompakt listevisning */
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      margin-top: 3em;
+      padding: 15px;
+      font-size: 16px;
+      background-color: #0077aa;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005f73;
+    }
+  </style>
+</head>
+<body>
+  <h3>Indkøbsapp</h3>
+
+  <div class="section">
+    <p>Med denne indkøbsapp kan du oprette indkøbslister, huskelister og lagerlister.</p>
+
+    <p>For en indkøbsliste:<br>
+    Opret en butik og tilføj kategorier, hvilket du gør i administrationspanelet (mere om dette i administration).</p>
+
+    <p>Kategorier hjælper dig med at navigere effektivt i en butik, så du bevæger dig naturligt uden at gå tilbage.</p>
+
+    <p>For at starte med lister, gå til "Administration".</p>
+
+    <p>For at organisere din indkøbsrute, placer et nummer foran dit kategorinavn. Listen sorteres efter kategoriorden, hvilket giver dig mulighed for at strukturere din indkøbssekvens:</p>
+
+    <h4>Kategorier:</h4>
+    <div class="categories">
+      01 Brød<br>
+      01 Grøntsager<br>
+      02 Frisk kød (ikke frossent)
+    </div>
+
+    <p>Eller hvis du handler i en isenkræmmer:</p>
+
+    <h4>Kategorier:</h4>
+    <div class="categories">
+      01 Elektriske varer<br>
+      02 VVS-forsyninger<br>
+      03 Værktøj
+    </div>
+
+    <p>Du kan også holde styr på, hvad du har derhjemme i din fryser, spisekammer eller opbevaring.<br>
+    Opret en butik ved navn "Hjemmelager"</p>
+
+    <h4>Kategorier:</h4>
+    <div class="categories">
+      Fryser<br>
+      Spisekammer<br>
+      Bryggers
+    </div>
+  </div>
+
+  <div class="section">
+    <p>Du kan redigere en vare ved at trykke på mængdefeltet, hvilket flytter varen, mængden og kategorien til den øverste redigeringssektion. Rediger mængde, varenavn eller vælg en anden kategori, hvis tilgængelig. Når du er færdig, tryk på opdateringsknappen, som automatisk skifter funktion.</p>
+
+    <p>Når du opretter en liste, skal du angive mængde, varenavn og kategori, før du tilføjer en post. Pris kan ikke indtastes på dette tidspunkt.</p>
+
+    <p>Hvis mængden er sat til 0, fungerer listen som en huskeliste for varer, der skal købes. Du kan justere synlighedsindstillinger:</p>
+
+    <ul>
+      <li>Vis alle varer</li>
+      <li>Skjul varer med mængde 0</li>
+      <li>Vis kun varer med mængde 0</li>
+    </ul>
+
+    <p>Indtastning af en mængde for en vare i "0"-listen flytter den til den generelle liste.</p>
+
+    <p>Du kan indtaste en pris; hvis du indtaster et helt tal uden decimaler, formateres det automatisk til at inkludere ".00".</p>
+
+    <p>Når en vare har en pris og mængde, markerer tryk på varenavnet den som købt og flytter den til bunden af listen. De samlede omkostninger opdateres, mens du handler. Negative priser, som flaskepant, understøttes også.</p>
+
+    <p>Prissporing er valgfri, men nyttig til budgettering. Hvis den anvendes korrekt, giver appen et præcist estimat af omkostningerne.</p>
+
+    <p>Hvis du ser en specifik kategori, tælles kun varer inden for den kategori med i totalen.</p>
+  </div>
+
+  <button onclick="history.back()">⬅️ Tilbage</button>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 1em; /* approximately the width of an 'm' */
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1, h2 {
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+    }
+
+    ul {
+      padding-left: 1.2em;
+      margin-top: 0;
+    }
+
+    li {
+      margin-bottom: 0.75em;
+    }
+
+    .back-button {
+      display: block;
+      margin: 2em auto 0 auto;
+      padding: 0.75em 1.5em;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .back-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Administration</h1>
+  <p>
+    Här kan du skapa och ta bort butikslistor eller generella listor. Listor kan representera mer än bara en butik.
+    När du har skapat en butik kan du välja den och sedan skapa kategorier.
+    Kategorier har flera syften; de kan visa exakt var en vara finns, t.ex. i en järnaffär eller annan butik med platsbaserade placeringar.
+    Du kan också använda dem för att bestämma ordningen i vilken du samlar varor, genom att lägga till ett nummer före kategorinamnet — till exempel "01 Grönsaker", där kategorin sorteras numeriskt först och sedan alfabetiskt.
+    I detta administrationspanel kan du också byta namn på kategorier.
+    I denna version kan du inte redigera namn på butiker eller listor.
+  </p>
+  <h2>Tillgängliga administrationsfunktioner:</h2>
+  <ul>
+    <li><strong>Lägg till butik</strong><br>Lägger till en butik eller bara en lista enligt önskemål</li>
+    <li><strong>Ta bort butik</strong><br>Tar bort den valda butiken samt dess varor och kategorier</li>
+    <li><strong>Exportera</strong><br>Exporterar hela databasen inklusive mängder, text, priser, kategorier och butiker</li>
+    <li><strong>Importera</strong><br>Motsatsen till export, gäller all data</li>
+  </ul>
+  <p><strong>Välj butik</strong> (görs högst upp), sedan kan du:</p>
+  <ul>
+    <li><strong>Lägg till kategori</strong><br>Kategorier hjälper dig att hitta varor eller visa deras placering</li>
+    <li><strong>Ta bort kategori</strong><br>Tar bort kategorin och dess innehåll</li>
+    <li><strong>Redigera kategori</strong><br>Byter namn på kategorin</li>
+  </ul>
+  <button class="back-button" onclick="history.back()">Tillbaka</button>
+</body>
+</html>

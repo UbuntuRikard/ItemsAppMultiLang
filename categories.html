@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title data-i18n="Heading">Manage Categories</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="cat_style.css" />
+  <link rel="stylesheet" href="modal.css" />
+  <script>
+  const currentLang = localStorage.getItem('selectedLang') || 'en';
+</script>
+
+</head>
+<body>
+  <div class="header-container">
+    <button class="info-btn" onclick="window.location.href='about_' + currentLang + '.html'">❗</button>
+    <h1 data-i18n="Heading">Categories</h1>
+    <button class="help-btn" onclick="window.location.href='helpadm_' + currentLang + '.html'">❓</button>
+  </div>
+
+  <div class="input-group">
+    <select id="storeSelect" onchange="changeStore()" onclick="sortStoresDropdown()">
+      <option value="" data-i18n="Select store">Select store</option>
+    </select>
+    <input id="newStoreName" type="text" data-i18n-placeholder="New store name" placeholder="New store name" />
+    <div class="flex-row">
+      <button data-i18n="Add Store" onclick="addStore()">Add Store</button>
+      <button data-i18n="Delete Store" onclick="deleteStore()">Delete Store</button>
+    </div>
+    <div class="flex-row">
+      <button data-i18n="Export" onclick="exportData()">Export</button>
+      <button data-i18n="Change Language" onclick="window.location.href='lang.html'">Lang</button>
+      <button data-i18n="Import" onclick="importData()">Import</button>
+    </div>
+  </div>
+
+  <div class="input-group">
+    <input id="categoryName" type="text" data-i18n-placeholder="Category name" placeholder="Category name" />
+    <button id="categoryBtn" data-i18n="Add Category" onclick="addOrUpdateCategory()">Add Category</button>
+  </div>
+
+  <div class="link-button">
+    <button data-i18n="Back" onclick="history.back()">Back</button>
+  </div>
+
+  <ul id="categoryList"></ul>
+
+  <script src="cat_script.js" defer></script>
+  <script src="lang_cat.js" defer></script>
+  <script>
+      window.addEventListener("DOMContentLoaded", () => {
+      loadStores();
+
+      const savedStore = localStorage.getItem("selectedStoreCategory");
+      if (savedStore) {
+        storeSelect.value = savedStore;
+        changeStore();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 1em;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #005f73;
+      margin-top: 1.5em;
+    }
+    p {
+      margin-bottom: 1em;
+    }
+    .section {
+      margin-bottom: 1.5em;
+    }
+
+    /* 20% REDUCERET AFSTAND FOR CATEGORIES */
+    .categories {
+      background: #eef;
+      padding: 8px; /* fra 10px → 20% mindre */
+      border-left: 4px solid #0077aa;
+      white-space: pre-line;
+      margin-top: 0.4em; /* fra 0.5em → 20% mindre */
+      line-height: 1.28; /* fra 1.6 → 20% mindre */
+      font-size: 0.95em; /* let kompakt */
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 1em; /* lidt mindre venstre margen */
+      margin-top: 0.4em; /* fra 0.5em → 20% mindre */
+      line-height: 1.28; /* mere kompakt listevisning */
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      margin-top: 3em;
+      padding: 15px;
+      font-size: 16px;
+      background-color: #0077aa;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005f73;
+    }
+  </style>
+</head>
+<body>
+  <h3>Ostosohjelma</h3>
+
+  <div class="section">
+    <p>Tämän sovelluksen avulla voit luoda ostoslistoja, muistilistoja ja varastolistoja.</p>
+
+    <p>Ostoslistaa varten:<br>
+    Luo kauppa ja lisää kategorioita hallintapaneelista (lisää tästä kohdassa hallinta).</p>
+
+    <p>Kategoriat auttavat sinua liikkumaan tehokkaasti kaupassa ilman, että sinun tarvitsee palata takaisin.</p>
+
+    <p>Aloittaaksesi listojen kanssa, siirry kohtaan "Hallinta".</p>
+
+    <p>Voit järjestää ostosreittisi laittamalla numeron kategorian nimen eteen. Lista järjestyy kategorioiden mukaan, jolloin voit suunnitella ostosjärjestyksen:</p>
+
+    <h4>Kategoriat:</h4>
+    <div class="categories">
+      01 Leipä<br>
+      01 Vihannekset<br>
+      02 Tuore liha (ei pakastettu)
+    </div>
+
+    <p>Rautakaupassa:</p>
+
+    <h4>Kategoriat:</h4>
+    <div class="categories">
+      01 Sähkötarvikkeet<br>
+      02 Putkitarvikkeet<br>
+      03 Työkalut
+    </div>
+
+    <p>Voit myös seurata, mitä sinulla on kotona pakastimessa, ruokakomerossa tai varastossa.<br>
+    Luo kauppa nimellä "Kotivarasto"</p>
+
+    <h4>Kategoriat:</h4>
+    <div class="categories">
+      Pakastin<br>
+      Ruokakomero<br>
+      Kodinhoitohuone
+    </div>
+  </div>
+
+  <div class="section">
+    <p>Voit muokata tuotetta napauttamalla määräkenttää, jolloin tuotteen tiedot siirtyvät muokkausosioon. Voit muuttaa määrää, nimeä tai valita toisen kategorian. Lopuksi paina päivityspainiketta.</p>
+
+    <p>Listaa luodessasi sinun on määritettävä määrä, tuotteen nimi ja kategoria ennen lisäämistä. Hintaa ei voi antaa tässä vaiheessa.</p>
+
+    <p>Jos määrä on 0, lista toimii muistilistana. Näkyvyysasetuksia voi säätää:</p>
+
+    <ul>
+      <li>Näytä kaikki tuotteet</li>
+      <li>Piilota tuotteet, joiden määrä on 0</li>
+      <li>Näytä vain tuotteet, joiden määrä on 0</li>
+    </ul>
+
+    <p>Jos syötät määrän tuotteelle "0"-listalla, se siirtyy yleiseen listaan.</p>
+
+    <p>Voit syöttää hinnan; jos syötät kokonaisluvun, sovellus lisää automaattisesti ".00".</p>
+
+    <p>Kun tuotteella on hinta ja määrä, napauttamalla nimeä se merkitään ostetuksi ja siirtyy listan loppuun. Kokonaissumma päivittyy. Myös negatiiviset hinnat, kuten pantit, ovat tuettuja.</p>
+
+    <p>Hintaseuranta on vapaaehtoista mutta hyödyllistä budjetointia varten. Oikein käytettynä saat tarkan kustannusarvion.</p>
+
+    <p>Näkyvissä olevan kategorian tuotteet lasketaan vain siihen kokonaisuuteen.</p>
+  </div>
+
+  <button onclick="history.back()">⬅️ Takaisin</button>
+</body>
+</html>

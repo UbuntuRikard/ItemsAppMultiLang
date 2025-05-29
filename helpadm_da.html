@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 1em; /* approximately the width of an 'm' */
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1, h2 {
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+    }
+
+    ul {
+      padding-left: 1.2em;
+      margin-top: 0;
+    }
+
+    li {
+      margin-bottom: 0.75em;
+    }
+
+    .back-button {
+      display: block;
+      margin: 2em auto 0 auto;
+      padding: 0.75em 1.5em;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .back-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Administration</h1>
+  <p>
+    Her kan du oprette og slette butikslister eller generelle lister. Lister kan repræsentere mere end blot en butik.
+    Når du har oprettet en butik, kan du vælge den og derefter oprette kategorier.
+    Kategorier har flere funktioner; de kan angive den præcise placering af en vare i f.eks. et byggemarked eller en anden butik med specifikke placeringer.
+    Du kan også bruge dem til at bestemme rækkefølgen for indkøb ved at tilføje et tal foran kategorinavnet — for eksempel "01 Grøntsager", hvor kategorien sorteres numerisk og derefter alfabetisk.
+    I dette administrationspanel kan du også omdøbe kategorier.
+    I denne version kan du ikke redigere navne på butikker eller lister.
+  </p>
+  <h2>Tilgængelige administrationsfunktioner:</h2>
+  <ul>
+    <li><strong>Tilføj butik</strong><br>Tilføjer en butik eller blot en liste, alt efter behov</li>
+    <li><strong>Slet butik</strong><br>Sletter den valgte butik samt varer og kategorier</li>
+    <li><strong>Eksporter</strong><br>Eksporterer hele databasen, inkl. mængder, varetekst, priser, kategorier og butikker</li>
+    <li><strong>Importer</strong><br>Modsat af eksport, gælder for alle data</li>
+  </ul>
+  <p><strong>Vælg butik</strong> (gøres øverst), derefter kan du:</p>
+  <ul>
+    <li><strong>Tilføj kategori</strong><br>Kategorier hjælper med at finde varer eller angive deres placering</li>
+    <li><strong>Slet kategori</strong><br>Sletter kategorien og dens varer</li>
+    <li><strong>Rediger kategori</strong><br>Omdøber kategorien</li>
+  </ul>
+  <button class="back-button" onclick="history.back()">Tilbage</button>
+</body>
+</html>

@@ -1,0 +1,177 @@
+body {
+  font-family: sans-serif;
+  padding: 10px;
+  width: 95%;
+  max-width: 768px;
+  margin: auto;
+  background: #f7f7f7;
+}
+/*
+ * Start indsættelse
+*/
+
+/*
+ * Slut indsættelse
+*/
+h1 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.input-group, .filter-bar {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input-line {
+  display: flex;
+  gap: 5px;
+}
+
+.input-number {
+  flex: 0 0 20%;
+}
+
+.input-name {
+  flex: 1;
+}
+
+input, select, button {
+  padding: 4px;
+  font-size: 0.7rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  max-height: 34px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 8px;
+}
+
+li {
+  background: #fff;
+  margin: 5px 0;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  display: flex;
+  flex-direction: column;
+}
+
+li.checked .item-name {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.top-line {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.item-line {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  flex: 1;
+}
+
+.item-number {
+  flex: 0 0 20%;
+  font-weight: bold;
+  color: #0079a1;
+  cursor: pointer;
+}
+
+.item-name {
+  flex: 1;
+  word-break: break-word;
+  cursor: pointer;
+}
+
+.del-btn {
+  flex: 0 0 15%;
+  max-width: 15%;
+  font-size: 0.6rem;
+  padding: 6px 0;
+  background-color: #f44336;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-line {
+  font-size: 0.6rem;
+  color: #555;
+  margin-top: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom-line input {
+  width: 80px;
+  font-size: 0.6rem;
+  text-align: right;
+}
+
+.right-buttons {
+  display: flex;
+  gap: 5px;
+  justify-content: flex-end;
+}
+
+.right-buttons button {
+  flex: 1 0 50%;
+  max-width: 50%;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-container h1 {
+  flex-grow: 1;
+  text-align: center;
+  margin: 0;
+}
+
+.info-btn, .help-btn {
+  width: 10%;
+  min-width: 40px;
+  padding: 5px;
+  font-size: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.flash {
+  background-color: #ffffcc;
+  transition: background-color 2s ease-out;
+}

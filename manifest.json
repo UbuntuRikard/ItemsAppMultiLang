@@ -1,0 +1,27 @@
+{
+  "name": "Shopping Trolly",
+  "short_name": "Trolly",
+  "description": "A WPA (Web Progressive App) for shopping.",
+  "version": "1.0.9",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff5722",
+  "orientation": "portrait",
+  "categories": ["shopping", "e-commerce", "utilities"],
+  "scope": "/",
+  "icons": [
+    {
+      "src": "shopping_trolly_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "shopping_trolly_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

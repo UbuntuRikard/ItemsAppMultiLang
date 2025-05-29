@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 1em;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #005f73;
+      margin-top: 1.5em;
+    }
+    p {
+      margin-bottom: 1em;
+    }
+    .section {
+      margin-bottom: 1.5em;
+    }
+
+    /* 20% REDUCERET AFSTAND FOR CATEGORIES */
+    .categories {
+      background: #eef;
+      padding: 8px; /* fra 10px → 20% mindre */
+      border-left: 4px solid #0077aa;
+      white-space: pre-line;
+      margin-top: 0.4em; /* fra 0.5em → 20% mindre */
+      line-height: 1.28; /* fra 1.6 → 20% mindre */
+      font-size: 0.95em; /* let kompakt */
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 1em; /* lidt mindre venstre margen */
+      margin-top: 0.4em; /* fra 0.5em → 20% mindre */
+      line-height: 1.28; /* mere kompakt listevisning */
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      margin-top: 3em;
+      padding: 15px;
+      font-size: 16px;
+      background-color: #0077aa;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005f73;
+    }
+  </style>
+</head>
+<body>
+  <h3>Application de Courses</h3>
+
+  <div class="section">
+    <p>Avec cette application, vous pouvez créer des listes de courses, des rappels et des inventaires.</p>
+
+    <p>Pour une liste de courses :<br>
+    Créez un magasin et ajoutez des catégories via le panneau d’administration (plus d’infos dans “Administration”).</p>
+
+    <p>Les catégories vous aident à naviguer efficacement dans un magasin sans revenir sur vos pas.</p>
+
+    <p>Pour commencer, allez dans “Administration”.</p>
+
+    <p>Pour organiser votre parcours, mettez un numéro devant le nom de la catégorie. La liste sera triée par ordre :</p>
+
+    <h4>Catégories :</h4>
+    <div class="categories">
+      01 Pain<br>
+      01 Légumes<br>
+      02 Viande fraîche (non surgelée)
+    </div>
+
+    <p>Dans un magasin de bricolage :</p>
+
+    <h4>Catégories :</h4>
+    <div class="categories">
+      01 Électricité<br>
+      02 Plomberie<br>
+      03 Outils
+    </div>
+
+    <p>Vous pouvez aussi suivre vos réserves à la maison : congélateur, garde-manger, etc.<br>
+    Créez un magasin nommé “Inventaire Maison”.</p>
+
+    <h4>Catégories :</h4>
+    <div class="categories">
+      Congélateur<br>
+      Garde-manger<br>
+      Buanderie
+    </div>
+  </div>
+
+  <div class="section">
+    <p>Appuyez sur la quantité pour modifier un article. Il sera déplacé en haut. Modifiez la quantité, le nom ou la catégorie. Puis cliquez sur “Mettre à jour”.</p>
+
+    <p>Pour ajouter un article, entrez une quantité, un nom, une catégorie. Le prix ne peut pas être saisi maintenant.</p>
+
+    <p>Une quantité de 0 transforme la liste en rappel. Paramètres de visibilité :</p>
+
+    <ul>
+      <li>Afficher tous les articles</li>
+      <li>Masquer les articles avec 0</li>
+      <li>Afficher uniquement ceux avec 0</li>
+    </ul>
+
+    <p>Ajouter une quantité à un article “0” le déplace vers la liste normale.</p>
+
+    <p>Vous pouvez entrer un prix, qui sera formaté automatiquement en “.00”.</p>
+
+    <p>Un article avec prix et quantité peut être marqué comme acheté. Il va en bas, le total se met à jour. Les prix négatifs (comme consignes) sont aussi gérés.</p>
+
+    <p>Le suivi des prix est facultatif mais utile pour le budget. Bien utilisé, l’application donne une estimation fiable.</p>
+
+    <p>En affichant une catégorie, seuls ses articles comptent pour le total.</p>
+  </div>
+
+  <button onclick="history.back()">⬅️ Retour</button>
+</body>
+</html>

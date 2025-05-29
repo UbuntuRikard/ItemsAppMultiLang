@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 1em; /* approximately the width of an 'm' */
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1, h2 {
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+    }
+
+    ul {
+      padding-left: 1.2em;
+      margin-top: 0;
+    }
+
+    li {
+      margin-bottom: 0.75em;
+    }
+
+    .back-button {
+      display: block;
+      margin: 2em auto 0 auto;
+      padding: 0.75em 1.5em;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .back-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Verwaltung</h1>
+  <p>
+    Hier können Sie Listen für Geschäfte oder allgemeine Listen erstellen und löschen. Listen können mehr als nur ein Geschäft darstellen.
+    Nach dem Erstellen eines Geschäfts können Sie es auswählen und Kategorien hinzufügen.
+    Kategorien dienen mehreren Zwecken: Sie zeigen z. B. die genaue Position eines Artikels in einem Baumarkt oder einem anderen Geschäft.
+    Sie können auch genutzt werden, um die Reihenfolge beim Einkaufen zu bestimmen – etwa durch eine Nummer vor dem Kategoriennamen, z. B. "01 Gemüse", wobei erst numerisch, dann alphabetisch sortiert wird.
+    In diesem Verwaltungsbereich können Sie auch Kategorien umbenennen.
+    In dieser Version ist das Bearbeiten von Namen für Geschäfte oder Listen nicht möglich.
+  </p>
+  <h2>Verfügbare Verwaltungsfunktionen:</h2>
+  <ul>
+    <li><strong>Geschäft hinzufügen</strong><br>Fügt ein Geschäft oder einfach nur eine Liste hinzu</li>
+    <li><strong>Geschäft löschen</strong><br>Löscht das ausgewählte Geschäft mit allen Artikeln und Kategorien</li>
+    <li><strong>Exportieren</strong><br>Exportiert die gesamte Datenbank mit Mengen, Artikeln, Preisen, Kategorien und Geschäften</li>
+    <li><strong>Importieren</strong><br>Gegenteil von Export, gilt für alle Daten</li>
+  </ul>
+  <p><strong>Geschäft auswählen</strong> (oben erforderlich), dann können Sie:</p>
+  <ul>
+    <li><strong>Kategorie hinzufügen</strong><br>Kategorien helfen beim Auffinden oder Platzieren von Artikeln</li>
+    <li><strong>Kategorie löschen</strong><br>Löscht die Kategorie samt enthaltenen Artikeln</li>
+    <li><strong>Kategorie bearbeiten</strong><br>Benennt die Kategorie um</li>
+  </ul>
+  <button class="back-button" onclick="history.back()">Zurück</button>
+</body>
+</html>
