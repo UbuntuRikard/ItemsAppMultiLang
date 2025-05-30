@@ -1,24 +1,24 @@
-# Indkøbslisten
+# Shopping List
 
-Indkøbslisten er en simpel **WPA-app**, der gør det nemt at holde styr på dine indkøb.
-Med denne app, kan du planlægge din tur gennem dit indkøbscenter, supermarked, eller et andet inkøbs sted.
-Du kan også, med denne app, holde styr på de vare du har hjemme og hvor de befinder sig, og hvor meget der et, og du kan enda sætte en pris på så du ved hvad dit lille hjemmelager har af værdi.
-Denne app, er tilgængelig på følgende sprog: Engelsk, Dansk, Svensk, Norsk, Finsk, Tysk, spansk og Fransk.
-Appen er udviklet ved hjælp af AI-assistenter som Copilot og ChatGPT, hvor design og specifikationer er skabt af **Rikard Svenningsen**, og programmering af **AI.**
-**Dette er mit første, og andet forsøg på at lave en app**
+The Shopping List is a simple **WPA app** that makes it easy to keep track of your shopping.
+With this app, you can plan your trip through your shopping mall, supermarket, or another shopping location.
+You can also, with this app, keep track of the items you have at home and where they are located, how much you have, and you can even set a price so you know the value of your little home inventory.
+This app is available in the following languages: English, Danish, Swedish, Norwegian, Finnish, German, Spanish, and French.
+The app is developed using AI assistants such as Copilot and ChatGPT, where the design and specifications are created by **Rikard Svenningsen**, and programming by **AI.**
+**This is my first and second attempt at making an app**
 
-## 🌍 Licens
-Dette projekt er distribueret under **GNU General Public License v3.0**. 
-Du kan frit bruge, ændre og distribuere koden i overensstemmelse med licensbetingelserne. 
-Se den fulde licens i `license.txt` eller læs mere på [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html).
+## 🌍 License
+This project is distributed under the **GNU General Public License v3.0**.
+You are free to use, modify, and distribute the code in accordance with the license terms.
+See the full license in `license.txt` or read more at [GNU GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.html).
 
 ## 📦 Installation
-1. Brug en Chrome browser eller Safari
-2. Gå til denne adresse: https://ubunturikard.github.io/ItemsAppMultiLang/index.html
+1. Use a Chrome browser or Safari
+2. Go to this address: https://ubunturikard.github.io/ItemsAppMultiLang/index.html
 
-## ⚡ Udviklingsmetode
-Denne app er udviklet med en ny tilgang, hvor ikke-programmører kan skabe software ved at definere krav og bruge AI-værktøjer til implementeringen. 
+## ⚡ Development Method
+This app is developed with a new approach, where non-programmers can create software by defining requirements and using AI tools for implementation.
 
-## 📖 Kontakt
-Har du spørgsmål eller feedback? Kontakt Rikard Svenningsen på ubuntu @ svenningsen.dk.
+## 📖 Contact
+Do you have questions or feedback? Contact Rikard Svenningsen at ubuntu @ svenningsen.dk.
 

@@ -1,27 +1,30 @@
-Indkøbslisten – Versionshistorik
+Shopping List – Version History
 
-Version 1.0.0 - 10-maj-2025 Beskrivelse: Indkøbslisten er en WebView-app, der hjælper med at organisere indkøb. Den er designet til at give en effektiv og fleksibel struktur til indkøbslister, butikker og kategorier. Brugeren kan oprette lister, tilføje kategorier og sortere varerne for en optimal shoppingoplevelse.
+Version 1.0.0 - 10-May-2025  
+Description: The Shopping List is a WebView app that helps organize shopping. It is designed to provide an efficient and flexible structure for shopping lists, stores, and categories. The user can create lists, add categories, and sort items for an optimal shopping experience.
 
-Version 1.0.9 - 30-maj-2025 Beskrivelse: Indkøbslisten er en WPA-app, der hjælper med at organisere indkøb. Den er designet til at give en effektiv og fleksibel struktur til indkøbslister, butikker og kategorier. Brugeren kan oprette lister, tilføje kategorier og sortere varerne for en optimal shoppingoplevelse.
-Særlige funktioner:
+Version 1.0.9 - 30-May-2025  
+Description: The Shopping List is a WPA app that helps organize shopping. It is designed to provide an efficient and flexible structure for shopping lists, stores, and categories. The user can create lists, add categories, and sort items for an optimal shopping experience.  
+Special Features:
 
-    Butiks- og listeadministration – Opret og slet butikker/lister
+    Store and list management – Create and delete stores/lists
 
-    Kategoristyring – Tilpas kategorier for bedre organisering
+    Category management – Customize categories for better organization
 
-    Eksport & Import – Mulighed for at tage backup og gendanne data
+    Export & Import – Ability to back up and restore data
 
-    Brugervenligt interface – Simpel og intuitiv opsætning
-    Sprog: Engelsk, Dansk, Svensk, Norsk, Finsk, Tysk, Spansk og Fransk
+    User-friendly interface – Simple and intuitive setup
+    Languages: English, Danish, Swedish, Norwegian, Finnish, German, Spanish, and French
 
-Licensinformation: Dette projekt er multi sprogs og lavet med engelsksproget programmering. Projektet er GNU GPL 3.0-licenseret, og andre udviklere opfordres til at bygge videre på det og oversætte det til andre sprog end de nævnte.
+License Information: This project is multilingual and created with English-based programming. The project is licensed under GNU GPL 3.0, and other developers are encouraged to build upon it and translate it into languages beyond those mentioned.
 
-Udviklingsmetode: Indkøbslisten er skabt med en ny tilgang til softwareudvikling, hvor AI-assistenter som Copilot og ChatGPT hjælper med implementeringen af kode. Design, struktur og funktionalitet er defineret af [Dit Navn], mens AI har hjulpet med at realisere koden. Denne metode gør det muligt for ikke-programmører at udvikle software ved at specificere krav og teste løsninger.
+Development Method: The Shopping List is created with a new approach to software development, where AI assistants like Copilot and ChatGPT help with the implementation of code. Design, structure, and functionality are defined by [Your Name], while AI helped realize the code. This method enables non-programmers to develop software by specifying requirements and testing solutions.
 
-Version 1.x.x - Fremtidige opdateringer
+Version 1.x.x - Future Updates
 
-    Mulige udvidelser baseret på brugerfeedback
+    Possible extensions based on user feedback
 
-    Optimering af WPA-ydeevne
+    Optimization of WPA performance
 
-    Oversættelser og udvidelser af funktionalitet
+    Translations and feature extensions
+
