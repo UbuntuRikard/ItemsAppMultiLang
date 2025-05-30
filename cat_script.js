@@ -35,7 +35,6 @@ function isAndroidWebView() {
   return (typeof Android !== "undefined" && typeof Android.saveData === "function");
 }
 
-// 💡 Central funktion til knaptekst
 function updateCategoryButtonText() {
   categoryBtn.textContent = translate(
     editingCategoryName ? "Update Category" : "Add Category"

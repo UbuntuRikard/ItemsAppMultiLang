@@ -131,12 +131,12 @@ function renderList() {
             bottom.className = "bottom-line";
 
             const catSpan = document.createElement("span");
-            // skal sprog justeres, det er lidt uheldigt at der er kolon i variabel navn
+            
             catSpan.textContent = `${translations[currentLang].shop["Category:"] || "Category"} ${cat.name}`;
 
             const priceInput = document.createElement("input");
             priceInput.type = "text";
-			// denne her linje skal også sprog justeres
+			
             priceInput.placeholder = translations[currentLang].shop["Price"] || "Price";
             priceInput.value = item.price || "";
             priceInput.onchange = (e) => {
@@ -165,7 +165,7 @@ function renderList() {
       }
     });
   });
-// denne her linje skal sprog justeres
+
 	totalDiv.textContent = (translations[currentLang].shop["Total"] || "Total") + ": " + total.toFixed(2).replace(".", ",") + " " + (translations[currentLang].shop["£"] || "kr");
 }
 

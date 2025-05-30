@@ -18,12 +18,10 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 let catLang = {};
 
-// Returner oversat tekst eller nøglen selv
 function translate(key) {
   return catLang[key] || key;
 }
 
-// Brug oversættelser på siden
 function applyTranslations() {
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
@@ -35,26 +33,21 @@ function applyTranslations() {
     if (catLang[key]) el.setAttribute("placeholder", catLang[key]);
   });
 
-  // Oversæt første <option> i dropdown
   const storeSelect = document.getElementById("storeSelect");
   if (storeSelect && storeSelect.options.length > 0) {
     storeSelect.options[0].textContent = translate("Select store");
   }
 
-  // Oversæt kategori-knappen hvis den findes
   if (typeof updateCategoryButtonText === "function") {
     updateCategoryButtonText();
   }
 
-  // Opdater modalens oversættelser også
   if (typeof applyTranslations_ === "function") {
     applyTranslations_();
   }
 }
 
-// Indlæs sprog og anvend oversættelser
 document.addEventListener("DOMContentLoaded", () => {
-	// forkert sted til sprogvalg
   const lang = localStorage.getItem("selectedLang") || "da";
 
   fetch("lang.json")
@@ -65,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		catLang = { ...cat, ...warning };
 		applyTranslations();
 
-      // Først når sproget er sat, kaldes loadStores
       if (typeof loadStores === "function") {
         loadStores();
 
@@ -78,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 });
-// midlertidig løsning
 function domain_label() {
   const { protocol, hostname, port } = window.location;
   let host = hostname;

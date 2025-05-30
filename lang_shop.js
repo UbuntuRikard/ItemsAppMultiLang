@@ -17,26 +17,26 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 */
 
 let translations = {};
-// Variabel der gemmer sprog kode, hvis ingen så vælge en = engelsk
-let currentLang = localStorage.getItem('selectedLang') || 'en';
-let isEditing = false; // Holder styr på om en vare redigeres
 
-// 🔄 Indlæser oversættelser fra `lang.json`
+let currentLang = localStorage.getItem('selectedLang') || 'en';
+let isEditing = false; 
+
+
 async function loadTranslations() {
     try {
         const response = await fetch('lang.json');
         translations = await response.json();
         console.log("Oversættelser indlæst:", translations); // Debugging
-        applyTranslations(); // Kører oversættelser ved start
+        applyTranslations(); 
     } catch (error) {
         console.error('Kunne ikke indlæse oversættelser:', error);
     }
 }
-// ny loadshop
+
 function loadStores() {
   storeSelect.innerHTML = ''; // Clear options first
 
-  // Tilføj oversat default option
+  
   const defaultOption = document.createElement("option");
   defaultOption.value = "";
   defaultOption.textContent = translations[currentLang]?.shop["Select store"] || "Select store";
@@ -52,7 +52,7 @@ function loadStores() {
 
   storeSelect.value = selectedStore;
 }
-// denne bruges shopscript.js
+
 function DOMAIN_LABEL() {
   const { protocol, hostname, port } = window.location;
   let host = hostname;
@@ -60,25 +60,24 @@ function DOMAIN_LABEL() {
     host += ":" + port;
   }
 
-  // Henter browser_msg direkte fra translations, uden fallback
   const browserMsg = translations[currentLang].warning["browser_msg"] || "";
 
   return host + "\n" + browserMsg + "\n\n";
 }
 window.DOMAIN_LABEL = DOMAIN_LABEL;
 
-// denne bruges i shopscript.js
+
 function upcase(text) {
   return text.toUpperCase();
 }
 window.upcase = upcase;
 
-// ny rendercategory
+
 function renderCategoryOptions() {
   categorySelect.innerHTML = '';
   filterSelect.innerHTML = '';
 
-  // Oversatte default options
+  
   const defaultCategoryOption = document.createElement("option");
   defaultCategoryOption.value = "";
   defaultCategoryOption.textContent = translations[currentLang]?.shop["Select category"] || "Select category";
@@ -115,10 +114,10 @@ function applyTranslations() {
 
     const texts = translations[currentLang].shop;
 
-    // Opdater HTML lang-attribut
+    
     document.getElementById('htmlTag').setAttribute('lang', currentLang);
 
-    // Opdater tekster i elementer med `data-i18n`
+    
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (texts[key]) {
@@ -126,7 +125,7 @@ function applyTranslations() {
         }
     });
 
-    // Opdater placeholders i inputfelter
+    
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
         const key = el.getAttribute('data-i18n-placeholder');
         if (texts[key]) {
@@ -134,11 +133,9 @@ function applyTranslations() {
         }
     });
 
-    updateButtonText(); // Opdater knapteksten efter oversættelse
+    updateButtonText(); 
 }
 
-// 🛠 **Opdater knapteksten baseret på redigeringstilstand**
-// her mangler noget logik tilat styre og ændre tilstanden
 function updateButtonText() {
     const addBtn = document.getElementById("addBtn");
     if (!addBtn) {
@@ -162,7 +159,6 @@ function updateButtonText() {
 function toggleAndTranslate() {
     window.zeroMode = (window.zeroMode + 1) % 3;
 
-    // Henter de korrekte oversættelser fra JSON-filen
     const labels = [
         translations[currentLang].shop["Hide 0"],
         translations[currentLang].shop["Only 0"],
@@ -175,21 +171,20 @@ function toggleAndTranslate() {
     renderList();
 }
 
-// ✏️ **Redigering af en vare**
+
 function startEditWithTranslation(item, cat) {
     numberInput.value = item.number;
     nameInput.value = item.name;
     categorySelect.value = cat.name;
     editingItem = { item, cat };
 
-    isEditing = true; // Sæt redigeringstilstand til "true"
-    updateButtonText(); // Opdater knapteksten
+    isEditing = true; 
+    updateButtonText(); 
 
     lastFocusedId = item.id;
     numberInput.focus();
 }
 
-// ➕ **Tilføj eller opdater vare**
 function processItemAction() {
     if (!selectedStore) return alert(translations[currentLang].warning["select_store"]);
 
@@ -216,8 +211,8 @@ function processItemAction() {
         }
 
         editingItem = null;
-        isEditing = false; // Nulstil redigeringstilstand
-        updateButtonText(); // Opdater knapteksten
+        isEditing = false; 
+        updateButtonText(); 
 
     } else {
         cat.items.push({ id: crypto.randomUUID(), number: qty, name, price: "", checked: false });
@@ -225,7 +220,6 @@ function processItemAction() {
 
     renderList();
 }
-// new function fra shopping.js med oversættelse
 function editItem(item, cat) {
   numberInput.value = item.number;
   nameInput.value = item.name;
@@ -239,7 +233,6 @@ function editItem(item, cat) {
 
 window.editItem = editItem;
 
-// new function to replace additem
 function handleItemAction() {
     if (!selectedStore) {
         alert(DOMAIN_LABEL() + upcase(translations[currentLang].warning["select_store"]));
@@ -287,8 +280,7 @@ function handleItemAction() {
 
     saveStores();
     renderList();
-    updateButtonText(); // 🔄 Opdater knaptekst til korrekt oversættelse
+    updateButtonText(); 
 }
 
-// 🔄 **Kør oversættelser ved start**
 window.onload = loadTranslations;

@@ -27,26 +27,6 @@ function domain_label() {
   return host + "\n" + translate("browser_msg") + "\n\n";
 }
 window.domain_label = domain_label;
-/*
-// denne bruges shopscript.js
-function DOMAIN_LABEL() {
-  const { protocol, hostname, port } = window.location;
-  let host = hostname;
-  if (protocol !== "https:" && port && port !== "80") {
-    host += ":" + port;
-  }
-
-  // Henter browser_msg direkte fra translations, uden fallback
-  const browserMsg = translations[currentLang].warning["browser_msg"] || "";
-
-  return host + "\n" + browserMsg + "\n\n";
-}
-window.DOMAIN_LABEL = DOMAIN_LABEL;
-
-function upcase(text) {
-  return text.toUpperCase();
-}
-*/
 function applyTranslations_() {
   const elements = document.querySelectorAll('[data-i18n]');
   elements.forEach(el => {
