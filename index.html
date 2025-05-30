@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <title data-i18n="Heading">Shopping List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="shopstyle.css">
+	<link rel="stylesheet" href="modal.css" />
+	<link rel="manifest" href="/ItemsAppMultiLang/manifest.json">
 	<script>
 	  if ('serviceWorker' in navigator) {
 		window.addEventListener('load', () => {
-		  navigator.serviceWorker.register('sw.js')
+		  navigator.serviceWorker.register('./sw.js')
 			.then(registration => {
 			  console.log('[Main] Service Worker registered with scope:', registration.scope);
 			})
@@ -19,9 +22,6 @@
 		console.warn('[Main] Service Worker not supported in this browser.');
 	  }
 	</script>
-    <link rel="stylesheet" href="shopstyle.css">
-	<link rel="stylesheet" href="modal.css" />
-	<link rel="manifest" href="manifest.json">	
 </head>
 <body>
     <div class="header-container">

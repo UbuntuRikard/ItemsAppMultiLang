@@ -3,7 +3,7 @@
   "short_name": "Trolly",
   "description": "A WPA (Web Progressive App) for shopping.",
   "version": "1.0.9",
-  "start_url": "index.html",
+  "start_url": "/ItemsAppMultiLang/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ff5722",
