@@ -179,7 +179,16 @@ function addOrUpdateCategory() {
     };
     input.click();
   }
+function deleteCategory(name) {
+  const store = stores.find(b => b.name === selectedStore);
+  if (!store) return alert(domain_label() + upcase(translate("cat_delete")));
+  if (!confirm(domain_label() + upcase(translate("cat_delete_yes_no")))) return;
+  store.categories = store.categories.filter(c => c.name !== name);
+  saveStores();
+  renderCategories();
+}
 
+/*
 function deleteCategory(name) {
   const store = stores.find(b => b.name === selectedStore);
   if (!store) return;
@@ -187,7 +196,7 @@ function deleteCategory(name) {
   saveStores();
   renderCategories();
 }
-
+*/
 function editCategory(name) {
   categoryInput.value = name;
   editingCategoryName = name;

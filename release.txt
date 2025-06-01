@@ -4,7 +4,7 @@ Version 1.0.0 - 10-May-2025
 Description: The Shopping List is a WebView app that helps organize shopping. It is designed to provide an efficient and flexible structure for shopping lists, stores, and categories. The user can create lists, add categories, and sort items for an optimal shopping experience.
 
 Version 1.0.9 - 30-May-2025  
-Description: The Shopping List is a WPA app that helps organize shopping. It is designed to provide an efficient and flexible structure for shopping lists, stores, and categories. The user can create lists, add categories, and sort items for an optimal shopping experience.  
+Description: The Shopping List is a PWA app that helps organize shopping. It is designed to provide an efficient and flexible structure for shopping lists, stores, and categories. The user can create lists, add categories, and sort items for an optimal shopping experience.  
 Special Features:
 
     Store and list management – Create and delete stores/lists
@@ -16,6 +16,12 @@ Special Features:
     User-friendly interface – Simple and intuitive setup
     Languages: English, Danish, Swedish, Norwegian, Finnish, German, Spanish, and French
 
+Version 1.1.0 – June 1, 2025
+Description:
+In this version, some bugs in the shopping list have been fixed, where the focus was not shifting as it should.
+On some systems, it's not always easy to reload the page, so the header can now be clicked—it also acts as a reload button, although it's a bit hidden.
+When deleting a category, a warning is now shown informing you that you are deleting a category and its possible items.
+
 License Information: This project is multilingual and created with English-based programming. The project is licensed under GNU GPL 3.0, and other developers are encouraged to build upon it and translate it into languages beyond those mentioned.
 
 Development Method: The Shopping List is created with a new approach to software development, where AI assistants like Copilot and ChatGPT help with the implementation of code. Design, structure, and functionality are defined by [Your Name], while AI helped realize the code. This method enables non-programmers to develop software by specifying requirements and testing solutions.
@@ -24,7 +30,7 @@ Version 1.x.x - Future Updates
 
     Possible extensions based on user feedback
 
-    Optimization of WPA performance
+    Optimization of PWA performance
 
     Translations and feature extensions
 

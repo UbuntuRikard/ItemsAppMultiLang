@@ -16,7 +16,7 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 */
 
-const CACHE_NAME = 'shopping-app-cache-v1.0.1';
+const CACHE_NAME = 'shopping-app-cache-v1.1.0';
 
 const urlsToCache = [
 '/ItemsAppMultiLang/',

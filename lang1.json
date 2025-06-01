@@ -54,9 +54,7 @@
       "data_saved": "Data saved in app storage.",
       "data_imported": "Data imported.",
       "data_error": "Import error:",
-      "browser_msg": "The domain is displayed only because the browser requires it.\nNo data is sent to the domain.",
-      "cat_delete": "Please select a category first.",
-      "cat_delete_yes_no": "Are you sure you want to delete this category and all its items?"
+      "browser_msg": "The domain is displayed only because the browser requires it.\nNo data is sent to the domain."
     }
   },
   "da": {
@@ -114,9 +112,7 @@
       "data_saved": "Data gemt i app-lagring.",
       "data_imported": "Data importeret.",
       "data_error": "Importfejl:",
-      "browser_msg": "Domænet vises kun fordi browseren kræver det.\nDer sendes ingen data til domænet.",
-      "cat_delete": "Vælg venligst en kategori først.",
-      "cat_delete_yes_no": "Er du sikker på, at du vil slette denne kategori og alle dens varer?"
+      "browser_msg": "Domænet vises kun fordi browseren kræver det.\nDer sendes ingen data til domænet."
     }
   },
   "sv": {
@@ -174,9 +170,7 @@
       "data_saved": "Data sparad i appens lagring.",
       "data_imported": "Data importerad.",
       "data_error": "Importfel:",
-      "browser_msg": "Domänen visas endast eftersom webbläsaren kräver det.\nIngen data skickas till domänen.",
-      "cat_delete": "Vänligen välj en kategori först.",
-      "cat_delete_yes_no": "Är du säker på att du vill radera denna kategori och alla dess varor?"
+      "browser_msg": "Domänen visas endast eftersom webbläsaren kräver det.\nIngen data skickas till domänen."
     }
   },
   "no": {
@@ -234,9 +228,7 @@
       "data_saved": "Data lagret i appens lagring.",
       "data_imported": "Data importert.",
       "data_error": "Importfeil:",
-      "browser_msg": "Domenet vises kun fordi nettleseren krever det.\nIngen data sendes til domenet.",
-      "cat_delete": "Vennligst velg en kategori først.",
-      "cat_delete_yes_no": "Er du sikker på at du vil slette denne kategorien og alle varene i den?"
+      "browser_msg": "Domenet vises kun fordi nettleseren krever det.\nIngen data sendes til domenet."
     }
   },
   "fi": {
@@ -294,9 +286,7 @@
       "data_saved": "Tiedot tallennettu sovelluksen tallennustilaan.",
       "data_imported": "Tiedot tuotu.",
       "data_error": "Tuontivirhe:",
-      "browser_msg": "Verkkotunnus näytetään vain, koska selain vaatii sen.\nTietoja ei lähetetä verkkotunnukseen.",
-      "cat_delete": "Valitse ensin kategoria, kiitos.",
-      "cat_delete_yes_no": "Haluatko varmasti poistaa tämän kategorian ja kaikki sen tuotteet?"
+      "browser_msg": "Verkkotunnus näytetään vain, koska selain vaatii sen.\nTietoja ei lähetetä verkkotunnukseen."
     }
   },
   "de": {
@@ -354,9 +344,7 @@
       "data_saved": "Daten im App-Speicher gespeichert.",
       "data_imported": "Daten importiert.",
       "data_error": "Importfehler:",
-      "browser_msg": "Die Domain wird nur angezeigt, weil der Browser sie verlangt.\nEs werden keine Daten an die Domain gesendet.",
-      "cat_delete": "Bitte wähle zuerst eine Kategorie aus.",
-      "cat_delete_yes_no": "Bist du sicher, dass du diese Kategorie und alle ihre Artikel löschen möchtest?"
+      "browser_msg": "Die Domain wird nur angezeigt, weil der Browser sie verlangt.\nEs werden keine Daten an die Domain gesendet."
     }
   },
   "es": {
@@ -414,9 +402,7 @@
       "data_saved": "Datos guardados en el almacenamiento de la app.",
       "data_imported": "Datos importados.",
       "data_error": "Error de importación:",
-      "browser_msg": "El dominio se muestra solo porque el navegador lo requiere.\nNo se envían datos al dominio.",
-      "cat_delete": "Por favor, selecciona una categoría primero.",
-      "cat_delete_yes_no": "Estás seguro de que deseas eliminar esta categoría y todos sus artículos?"
+      "browser_msg": "El dominio se muestra solo porque el navegador lo requiere.\nNo se envían datos al dominio."
     }
   },
   "fr": {
@@ -474,9 +460,7 @@
       "data_saved": "Données enregistrées dans le stockage de l'application.",
       "data_imported": "Données importées.",
       "data_error": "Erreur d'importation :",
-      "browser_msg": "Le domaine s'affiche uniquement parce que le navigateur l'exige.\nAucune donnée n'est envoyée au domaine.",
-      "cat_delete": "Veuillez d'abord sélectionner une catégorie.",
-      "cat_delete_yes_no": "Êtes-vous sûr de vouloir supprimer cette catégorie et tous ses articles ?"
+      "browser_msg": "Le domaine s'affiche uniquement parce que le navigateur l'exige.\nAucune donnée n'est envoyée au domaine."
     }
   }
 }

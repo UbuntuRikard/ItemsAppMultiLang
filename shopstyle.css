@@ -1,4 +1,4 @@
-body {
+body .heading{
   font-family: sans-serif;
   padding: 10px;
   width: 95%;
@@ -9,6 +9,22 @@ body {
 /*
  * Start indsættelse
 */
+.heading-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.4em;
+    font-weight: bold;
+    font-family: inherit;
+    color: inherit;
+    cursor: pointer;
+    text-align: center;
+}
+
+.heading-button:focus {
+    outline: none;
+}
 
 /*
  * Slut indsættelse

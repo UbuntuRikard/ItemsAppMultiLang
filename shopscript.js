@@ -154,6 +154,7 @@ function renderList() {
             if (item.id === lastFocusedId) {
               requestAnimationFrame(() => {
                 li.classList.add("flash");
+                li.scrollIntoView({ behavior: "smooth", block: "center" });
                 setTimeout(() => li.classList.remove("flash"), 2000);
               });
             }
