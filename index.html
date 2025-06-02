@@ -43,12 +43,24 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 </head>
 <body>
     <div class="header-container">
-        <button class="info-btn" onclick="window.location.href='about_' + currentLang + '.html'">❗</button>
-		<button id="headingBtn" class="heading-button" onclick="location.reload()" data-i18n="Heading">
-		Shopping List
+		<!-- ❗ Info-knap -->
+		<button class="info-btn" onclick="window.location.href='about_' + currentLang + '.html'">❗</button>
+
+		<!-- 🔄 Reload-ikon venstre -->
+		<button class="reload-btn" onclick="location.reload()" style="background: white; border: none; width: 40px; padding: 0; cursor: pointer;">
+			<img src="reload.png" alt="Reload" class="icon">
 		</button>
-<!--        <h1 data-i18n="Heading">Shopping List</h1> -->
-        <button class="help-btn" onclick="window.location.href='helpind_' + currentLang + '.html'">❓</button>
+
+		<!-- Overskrift som h1 -->
+		<h1 id="heading" data-i18n="Heading" style="margin: 0 10px;">Shopping List</h1>
+
+		<!-- 🔄 Reload-ikon højre -->
+		<button class="reload-btn" onclick="location.reload()" style="background: white; border: none; width: 40px; padding: 0; cursor: pointer;">
+			<img src="reload.png" alt="Reload" class="icon">
+		</button>
+
+		<!-- ❓ Hjælp-knap -->
+		<button class="help-btn" onclick="window.location.href='helpind_' + currentLang + '.html'">❓</button>
     </div>
 
     <select id="storeSelect" onchange="changeStore()">

@@ -32,9 +32,16 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 <body>
   <div class="header-container">
     <button class="info-btn" onclick="window.location.href='about_' + currentLang + '.html'">❗</button>
-<!--    <h1 data-i18n="Heading">Categories</h1> -->
-	<button id="headingBtn" class="heading-button" onclick="location.reload()" data-i18n="Heading">
-	  Categories
+	<!-- 🔄 Reload-ikon venstre -->
+	<button class="reload-btn" onclick="location.reload()" style="background: white; border: none; width: 40px; padding: 0; cursor: pointer;">
+		<img src="reload.png" alt="Reload" class="icon">
+	</button>
+
+    <h1 data-i18n="Heading">Categories</h1> 
+	</button>
+	<!-- 🔄 Reload-ikon højre -->
+	<button class="reload-btn" onclick="location.reload()" style="background: white; border: none; width: 40px; padding: 0; cursor: pointer;">
+		<img src="reload.png" alt="Reload" class="icon">
 	</button>
     <button class="help-btn" onclick="window.location.href='helpadm_' + currentLang + '.html'">❓</button>
   </div>
