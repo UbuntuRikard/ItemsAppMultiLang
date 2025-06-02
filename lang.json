@@ -1,7 +1,7 @@
 {
   "en": {
     "shop": {
-      "Heading": "🔄  Shopping list  🔄",
+      "Heading": "🔄  Shopping list. 🔄",
       "Select store": "Select store",
       "Qty": "Qty",
       "Item name": "Item name",
@@ -20,7 +20,7 @@
       "£": "£"
     },
     "cat": {
-      "Heading": "🔄  Administration  🔄",
+      "Heading": "🔄  Administration. 🔄",
       "Select store": "Select store",
       "New store name": "New store name",
       "Add Store": "Add Store",
@@ -61,7 +61,7 @@
   },
   "da": {
     "shop": {
-      "Heading": "🔄  Indkøbsliste  🔄",
+      "Heading": "🔄  Indkøbsliste. 🔄",
       "Select store": "Vælg butik",
       "Qty": "Antal",
       "Item name": "Varenavn",
@@ -80,7 +80,7 @@
       "£": "Kr."
     },
     "cat": {
-      "Heading": "🔄  Administration  🔄",
+      "Heading": "🔄  Administration. 🔄",
       "Select store": "Vælg butik",
       "New store name": "Nyt butiknavn",
       "Add Store": "Tilføj butik",
@@ -121,7 +121,7 @@
   },
   "sv": {
     "shop": {
-      "Heading": "🔄  Inköpslista  🔄",
+      "Heading": "🔄  Inköpslista. 🔄",
       "Select store": "Välj butik",
       "Qty": "Antal",
       "Item name": "Varunamn",
@@ -140,7 +140,7 @@
       "£": "Kr."
     },
     "cat": {
-      "Heading": "🔄  Administration  🔄",
+      "Heading": "🔄  Administration. 🔄",
       "Select store": "Välj butik",
       "New store name": "Nytt butiksnamn",
       "Add Store": "Lägg till butik",
@@ -181,7 +181,7 @@
   },
   "no": {
     "shop": {
-      "Heading": "🔄  Handleliste  🔄",
+      "Heading": "🔄  Handleliste. 🔄",
       "Select store": "Velg butikk",
       "Qty": "Antall",
       "Item name": "Varenavn",
@@ -200,7 +200,7 @@
       "£": "Kr."
     },
     "cat": {
-      "Heading": "🔄  Administrasjon  🔄",
+      "Heading": "🔄  Administrasjon. 🔄",
       "Select store": "Velg butikk",
       "New store name": "Nytt butikknavn",
       "Add Store": "Legg til butikk",
@@ -241,7 +241,7 @@
   },
   "fi": {
     "shop": {
-      "Heading": "🔄  Ostoslista  🔄",
+      "Heading": "🔄  Ostoslista. 🔄",
       "Select store": "Valitse kauppa",
       "Qty": "Määrä",
       "Item name": "Tuotteen nimi",
@@ -260,7 +260,7 @@
       "£": "€"
     },
     "cat": {
-      "Heading": "🔄  Hallinta  🔄",
+      "Heading": "🔄  Hallinta. 🔄",
       "Select store": "Valitse kauppa",
       "New store name": "Uusi kaupan nimi",
       "Add Store": "Lisää kauppa",
@@ -301,7 +301,7 @@
   },
   "de": {
     "shop": {
-      "Heading": "🔄  Einkaufsliste  🔄",
+      "Heading": "🔄  Einkaufsliste. 🔄",
       "Select store": "Geschäft auswählen",
       "Qty": "Menge",
       "Item name": "Artikelname",
@@ -320,7 +320,7 @@
       "£": "€"
     },
     "cat": {
-      "Heading": "🔄  Verwaltung  🔄",
+      "Heading": "🔄  Verwaltung. 🔄",
       "Select store": "Geschäft auswählen",
       "New store name": "Neuer Geschäftsname",
       "Add Store": "Geschäft hinzufügen",
@@ -361,7 +361,7 @@
   },
   "es": {
     "shop": {
-      "Heading": "🔄  Lista de compras  🔄",
+      "Heading": "🔄  Lista de compras. 🔄",
       "Select store": "Seleccionar tienda",
       "Qty": "Cant.",
       "Item name": "Nombre del artículo",
@@ -380,7 +380,7 @@
       "£": "€"
     },
     "cat": {
-      "Heading": "🔄  Administración  🔄",
+      "Heading": "🔄  Administración. 🔄",
       "Select store": "Seleccionar tienda",
       "New store name": "Nombre de nueva tienda",
       "Add Store": "Agregar tienda",
@@ -421,7 +421,7 @@
   },
   "fr": {
     "shop": {
-      "Heading": "🔄  Liste de courses  🔄",
+      "Heading": "🔄  Liste de courses. 🔄",
       "Select store": "Sélectionner un magasin",
       "Qty": "Quantité",
       "Item name": "Nom de l'article",
@@ -440,7 +440,7 @@
       "£": "€"
     },
     "cat": {
-      "Heading": "🔄  Administration  🔄",
+      "Heading": "🔄  Administration. 🔄",
       "Select store": "Sélectionner un magasin",
       "New store name": "Nouveau nom de magasin",
       "Add Store": "Ajouter un magasin",
