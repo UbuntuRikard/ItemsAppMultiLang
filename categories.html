@@ -33,14 +33,14 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
   <div class="header-container">
     <button class="info-btn" onclick="window.location.href='about_' + currentLang + '.html'">❗</button>
 	<!-- 🔄 Reload-ikon venstre -->
-	<button class="reload-btn" onclick="location.reload()" style="background: white; border: none; width: 40px; padding: 0; cursor: pointer;">
+	<button class="reload-btn" onclick="hardReload()" style="background: white; border: none; width: 40px; padding: 0; cursor: pointer;">
 		<img src="reload.png" alt="Reload" class="icon">
 	</button>
 
     <h1 data-i18n="Heading">Categories</h1> 
 	</button>
 	<!-- 🔄 Reload-ikon højre -->
-	<button class="reload-btn" onclick="location.reload()" style="background: white; border: none; width: 40px; padding: 0; cursor: pointer;">
+	<button class="reload-btn" onclick="hardReload()" style="background: white; border: none; width: 40px; padding: 0; cursor: pointer;">
 		<img src="reload.png" alt="Reload" class="icon">
 	</button>
     <button class="help-btn" onclick="window.location.href='helpadm_' + currentLang + '.html'">❓</button>
@@ -72,6 +72,13 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
   </div>
 
   <ul id="categoryList"></ul>
+	<script>
+	function hardReload() {
+		const url = new URL(window.location.href);
+		url.searchParams.set('_reload', Date.now()); // ny parameter tvinger ny hentning
+		window.location.href = url.toString();
+	}
+	</script>
 
   <script src="cat_script.js" defer></script>
   <script src="lang_cat.js" defer></script>

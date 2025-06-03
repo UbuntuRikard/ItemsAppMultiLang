@@ -47,7 +47,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 		<button class="info-btn" onclick="window.location.href='about_' + currentLang + '.html'">❗</button>
 
 		<!-- 🔄 Reload-ikon venstre -->
-		<button class="reload-btn" onclick="location.reload()" style="background: white; border: none; width: 40px; padding: 0; cursor: pointer;">
+		<button class="reload-btn" onclick="hardReload()" style="background: white; border: none; width: 40px; padding: 0; cursor: pointer;">
 			<img src="reload.png" alt="Reload" class="icon">
 		</button>
 
@@ -55,7 +55,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 		<h1 id="heading" data-i18n="Heading" style="margin: 0 10px;">Shopping List</h1>
 
 		<!-- 🔄 Reload-ikon højre -->
-		<button class="reload-btn" onclick="location.reload()" style="background: white; border: none; width: 40px; padding: 0; cursor: pointer;">
+		<button class="reload-btn" onclick="hardReload()" style="background: white; border: none; width: 40px; padding: 0; cursor: pointer;">
 			<img src="reload.png" alt="Reload" class="icon">
 		</button>
 
@@ -90,7 +90,13 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
     <div id="total" data-i18n="Total">Total: 0.00 kr</div>
     <ul id="list"></ul>
-
+	<script>
+		function hardReload() {
+		const url = new URL(window.location.href);
+		url.searchParams.set('_reload', Date.now()); // ny parameter tvinger ny hentning
+		window.location.href = url.toString();
+		}
+	</script>
     <script src="lang_shop.js" defer></script>
     <script src="shopscript.js" defer></script>
 <script>
