@@ -190,6 +190,14 @@ li.checked .item-name {
 }
 
 .flash {
-  background-color: #ffffcc;
-  transition: background-color 2s ease-out;
+  animation: flashHighlight 2s ease-in-out;
+}
+@keyframes flashHighlight {
+  0% { background-color: #ffffcc; }
+  50% { background-color: #fff176; }
+  100% { background-color: #ffffff; }
+}
+
+.highlight {
+  animation: flashHighlight 2s ease-in-out;
 }
