@@ -36,10 +36,11 @@ h1 {
 }
 
 .input-group, .filter-bar {
+  margin-top: 10px;
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 }
 
 .input-line {
@@ -169,6 +170,7 @@ li.checked .item-name {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .header-container h1 {
