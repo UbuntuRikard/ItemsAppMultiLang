@@ -16,7 +16,7 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 */
 
-const CACHE_NAME = 'shopping-app-cache-v1.1.0';
+const CACHE_NAME = 'shopping-app-cache-v1.1.1';
 
 const urlsToCache = [
 '/ItemsAppMultiLang/',
@@ -68,6 +68,7 @@ console.log('[SW] Service Worker loaded');
 // Installer service worker
 self.addEventListener('install', event => {
   console.log('[SW] Install event');
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       console.log('[SW] Caching app shell');
@@ -89,6 +90,8 @@ self.addEventListener('activate', event => {
           }
         })
       );
+    }).then(() => {
+      clients.claim(); // ← tilføj denne linje HER
     })
   );
 });
