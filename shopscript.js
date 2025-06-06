@@ -151,13 +151,24 @@ function renderList() {
             li.querySelector(".item-number").dataset.id = item.id;
             list.appendChild(li);
 
-            if (item.id === lastFocusedId) {
-              requestAnimationFrame(() => {
-                li.classList.add("flash");
-                li.scrollIntoView({ behavior: "smooth", block: "center" });
-                setTimeout(() => li.classList.remove("flash"), 2000);
-              });
-            }
+			if (lastFocusedId) {
+			  requestAnimationFrame(() => {
+				const focusedItem = document.querySelector(`[data-id="${lastFocusedId}"]`);
+				if (focusedItem) {
+				  const parentLi = focusedItem.closest("li"); // 🔹 Find det overordnede <li> element
+				  if (parentLi) {
+					parentLi.classList.add("flash"); // 🔥 Flash hele elementet
+					parentLi.scrollIntoView({ behavior: "smooth", block: "center" });
+
+					// 🔹 Fjern flash-effekten efter 2 sekunder
+					setTimeout(() => parentLi.classList.remove("flash"), 2000);
+				  }
+				}
+
+				// 🔹 Nulstil lastFocusedId, så det ikke husker det længere
+				lastFocusedId = null;
+			  });
+			}
 
             if (item.checked && item.price) {
               total += parseFloat(item.price.replace(",", ".")) * parseInt(item.number);
