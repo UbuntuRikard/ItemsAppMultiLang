@@ -64,7 +64,7 @@ const urlsToCache = [
 '/ItemsAppMultiLang/sw.js'];
 
 console.log('[SW] Service Worker loaded');
-
+/*
 // Installer service worker
 self.addEventListener('install', event => {
   console.log('[SW] Install event');
@@ -73,6 +73,22 @@ self.addEventListener('install', event => {
     caches.open(CACHE_NAME).then(cache => {
       console.log('[SW] Caching app shell');
       return cache.addAll(urlsToCache);
+    })
+  );
+});
+*/
+// Installer service worker
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(name => {
+          if (name !== CACHE_NAME) {
+            console.log(`[SW] Deleting old cache: ${name}`);
+            return caches.delete(name);
+          }
+        })
+      );
     })
   );
 });
