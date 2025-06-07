@@ -64,40 +64,16 @@ const urlsToCache = [
 '/ItemsAppMultiLang/sw.js'];
 
 console.log('[SW] Service Worker loaded');
-/*
-// Installer service worker
+
+// Installer service worker og hent version dynamisk
 self.addEventListener('install', event => {
   console.log('[SW] Install event');
-  self.skipWaiting();
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      console.log('[SW] Caching app shell');
-      return cache.addAll(urlsToCache);
-    })
-  );
-});
-*/
-// Installer service worker
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    fetch('/manifest.json')
+    fetch('/ItemsAppMultiLang/manifest.json')
       .then(response => response.json())
       .then(data => {
-        const CACHE_NAME = `shopping-app-cache-v${data.version}`; // Dynamisk version
-        console.log(`[SW] Activated - Version ${data.version}`);
-        self.VERSION = data.version; // Gem version til senere brug
-
-        // Ryd gammel cache, hvis versionen er ændret
-        return caches.keys().then(cacheNames => {
-          return Promise.all(
-            cacheNames.map(name => {
-              if (name !== CACHE_NAME) {
-                console.log(`[SW] Deleting old cache: ${name}`);
-                return caches.delete(name);
-              }
-            })
-          );
-        });
+        self.CACHE_NAME = `shopping-app-cache-v${data.version}`; // Dynamisk version
+        console.log(`[SW] Set CACHE_NAME to: ${self.CACHE_NAME}`);
       })
       .catch(error => console.error('[SW] Failed to load manifest version:', error))
   );
@@ -110,19 +86,19 @@ self.addEventListener('activate', event => {
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(name => {
-          if (name !== CACHE_NAME) {
+          if (name !== self.CACHE_NAME) {
             console.log(`[SW] Deleting old cache: ${name}`);
             return caches.delete(name);
           }
         })
       );
     }).then(() => {
-      clients.claim(); // ← tilføj denne linje HER
+      clients.claim(); // Gør, at nye versioner aktiveres straks
     })
   );
 });
 
-// Intercept fetch og vis cache eller fallback
+// Fetch og cache-håndtering
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
   console.log(`[SW] Fetch intercepted: ${event.request.url}`);
@@ -136,14 +112,13 @@ self.addEventListener('fetch', event => {
 
       return fetch(event.request).then(networkResponse => {
         console.log('[SW] Fetched from network:', event.request.url);
-        return caches.open(CACHE_NAME).then(cache => {
+        return caches.open(self.CACHE_NAME).then(cache => {
           cache.put(event.request, networkResponse.clone());
           return networkResponse;
         });
       }).catch(() => {
         console.warn('[SW] Fetch failed; serving offline fallback');
         return caches.match('/ItemsAppMultiLang/offline.html') || caches.match('/ItemsAppMultiLang/index.html');
-
       });
     })
   );
