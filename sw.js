@@ -15,8 +15,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 */
-
-const CACHE_NAME = 'shopping-app-cache-v1.1.1.3';
+// Version in the manifest.json
+//const CACHE_NAME = 'shopping-app-cache-v1.1.1.3';
 
 const urlsToCache = [
 '/ItemsAppMultiLang/',
@@ -80,16 +80,26 @@ self.addEventListener('install', event => {
 // Installer service worker
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(name => {
-          if (name !== CACHE_NAME) {
-            console.log(`[SW] Deleting old cache: ${name}`);
-            return caches.delete(name);
-          }
-        })
-      );
-    })
+    fetch('/manifest.json')
+      .then(response => response.json())
+      .then(data => {
+        const CACHE_NAME = `shopping-app-cache-v${data.version}`; // Dynamisk version
+        console.log(`[SW] Activated - Version ${data.version}`);
+        self.VERSION = data.version; // Gem version til senere brug
+
+        // Ryd gammel cache, hvis versionen er ændret
+        return caches.keys().then(cacheNames => {
+          return Promise.all(
+            cacheNames.map(name => {
+              if (name !== CACHE_NAME) {
+                console.log(`[SW] Deleting old cache: ${name}`);
+                return caches.delete(name);
+              }
+            })
+          );
+        });
+      })
+      .catch(error => console.error('[SW] Failed to load manifest version:', error))
   );
 });
 

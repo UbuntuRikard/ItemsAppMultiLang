@@ -21,7 +21,7 @@
 
         <p>This project was developed as part of a new approach to software development, where AI assistants such as Copilot and ChatGPT help with code implementation. 
         The design, functionality, and requirements were specified by <strong>Rikard Svenningsen</strong>, while AI assistants helped with the coding.</p>
-		<p>This version is the new edition of the Danish shopping app, so the Danish version is no longer maintained. <strong>This version is 1.1.0</strong>.</p>
+		<p>This version is the new edition of the Danish shopping app, so the Danish version is no longer maintained. <strong>This version is <span id="version">Loading...</span></strong>.</p>
         <p>The method allows non-programmers to develop software by focusing on design and structure while AI generates and adjusts the code. It demonstrates that one can contribute to software development without writing code themselves – simply by defining requirements and testing solutions.</p>
 
         <h2>License Information</h2>
@@ -43,6 +43,20 @@
 
         <button class="back-btn" onclick="history.back()">⬅ Back</button>
     </div>
+    <!-- Get version from manifest.json -->
+	<script>
+	  document.addEventListener("DOMContentLoaded", () => {
+		fetch('/manifest.json')
+		  .then(response => response.json())
+		  .then(data => {
+			const versionElement = document.getElementById('version');
+			if (versionElement) {
+			  versionElement.textContent = data.version;
+			}
+		  })
+		  .catch(error => console.error('[APP] Could not load manifest:', error));
+	  });
+	</script>
 
 </body>
 </html>

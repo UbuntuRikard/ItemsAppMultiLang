@@ -20,7 +20,7 @@
 
         <p>Dieses Projekt wurde im Rahmen eines neuen Ansatzes in der Softwareentwicklung erstellt, bei dem KI-Assistenten wie Copilot und ChatGPT bei der Code-Implementierung helfen. 
         Design, Funktionalität und Anforderungen wurden von <strong>Rikard Svenningsen</strong> festgelegt, während KI-Assistenten beim Programmieren halfen.</p>
-        <p>Diese Version ist die neue Ausgabe der dänischen Shopping-App, daher wird die dänische Version nicht mehr gepflegt. <strong>Diese Version ist 1.1.0</strong>.</p>
+        <p>Diese Version ist die neue Ausgabe der dänischen Shopping-App, daher wird die dänische Version nicht mehr gepflegt. <strong>Diese Version ist <span id="version">Loading...</span></strong>.</p>
         <p>Die Methode ermöglicht es Nicht-Programmierern, Software zu entwickeln, indem sie sich auf Design und Struktur konzentrieren, während KI den Code generiert und anpasst. Sie zeigt, dass man zur Softwareentwicklung beitragen kann, ohne selbst Code zu schreiben – einfach durch das Definieren von Anforderungen und das Testen von Lösungen.</p>
 
         <h2>Lizenzinformationen</h2>
@@ -42,5 +42,19 @@
 
         <button class="back-btn" onclick="history.back()">⬅ Zurück</button>
     </div>
+    <!-- Get version from manifest.json -->
+	<script>
+	  document.addEventListener("DOMContentLoaded", () => {
+		fetch('/manifest.json')
+		  .then(response => response.json())
+		  .then(data => {
+			const versionElement = document.getElementById('version');
+			if (versionElement) {
+			  versionElement.textContent = data.version;
+			}
+		  })
+		  .catch(error => console.error('[APP] Could not load manifest:', error));
+	  });
+	</script>
 </body>
 </html>
