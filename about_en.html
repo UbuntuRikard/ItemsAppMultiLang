@@ -46,7 +46,7 @@
     <!-- Get version from manifest.json -->
 	<script>
 	  document.addEventListener("DOMContentLoaded", () => {
-		fetch('/manifest.json')
+		fetch('/ItemsAppMultiLang/manifest.json')
 		  .then(response => response.json())
 		  .then(data => {
 			const versionElement = document.getElementById('version');
